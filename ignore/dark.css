@@ -1,0 +1,237 @@
+
+/* ================= Dark theme overrides ================= */
+/* Apply by adding `dark-mode` class to the <body> */
+.dark-mode {
+  /* override palette variables */
+  --accent: var(--brand-300); /* lighter accent for dark bg */
+  --muted: var(--muted);
+
+  /* base page colors */
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* body background (darker radial for contrast) */
+.dark-mode body {
+  background: radial-gradient(
+    circle at center,
+    rgba(10, 25, 45, 0.75),
+    rgba(6, 12, 25, 0.95)
+  );
+}
+
+/* Hero: subtler tint on dark */
+.dark-mode .hero {
+  background: linear-gradient(
+    180deg,
+    rgba(13, 110, 253, 0.06),
+    rgba(13, 110, 253, 0.01)
+  );
+}
+
+/* Badge */
+.dark-mode .badge-acm {
+  /* new: use accent gradient & surface */
+  background: var(--grad-accent);
+  color: var(--surface);
+}
+
+/* Timeline line (pale on dark) */
+.dark-mode .timeline::before {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* timeline dots */
+.dark-mode .timeline-item::after {
+  border: 4px solid var(--accent);
+}
+
+/* timeline text color */
+.dark-mode .timeline-item,
+.dark-mode .timeline-item * {
+  /* was #d7e6ff */
+  color: var(--text);
+}
+
+/* Member cards: dark backgrounds with preserved uplift on hover */
+.dark-mode .member-card {
+  /* was linear-gradient with dark blues */
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  color: var(--text);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+.dark-mode .member-card:hover {
+  background: linear-gradient(180deg, var(--brand-300), var(--brand-600));
+  box-shadow: 0 15px 35px rgba(2, 8, 20, 0.8);
+}
+
+/* Footer already dark in your CSS; ensure text is readable */
+.dark-mode footer {
+  background: var(--bg);
+  color: var(--muted);
+}
+
+/* Nav bar and links */
+.dark-mode nav {
+  /* was #071426 */
+  background: var(--brand-600) !important;
+}
+.dark-mode nav a {
+  /* was #e6eef8 */
+  color: var(--text);
+}
+
+/* underline animation color (use accent) */
+.dark-mode nav a::after {
+  background: var(--accent);
+}
+
+/* Home header / splits — darker split panels */
+.dark-mode #home-header {
+  /* was #e9f3ff */
+  color: var(--text);
+  background-blend-mode: overlay;
+}
+.dark-mode #home-header .split-left,
+.dark-mode #home-header .split-right {
+  background: linear-gradient(180deg, var(--brand-600), var(--brand));
+}
+
+/* Intro overlay panels (darker gradients) */
+.dark-mode .intro-panel.left {
+  background: linear-gradient(180deg, var(--brand-600), var(--bg));
+}
+.dark-mode .intro-panel.right {
+  background: linear-gradient(180deg, var(--brand-600), var(--bg));
+}
+
+/* Intro content text */
+.dark-mode .intro-content {
+  /* was #e6eef8 */
+  color: var(--text);
+}
+
+/* Toggle switch track override (un-checked) */
+.dark-mode .theme-toggle-label {
+  /* was #1f2a36 */
+  background: var(--border);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+.dark-mode .theme-toggle-input:checked + .theme-toggle-label {
+  background: var(--grad-brand-deep);
+}
+
+/* Cursor glow: cooler color for dark theme */
+.dark-mode #cursor-light {
+  background: radial-gradient(
+    circle,
+    rgba(10, 30, 60, 0.45),
+    rgba(0, 140, 255, 0.12)
+  );
+  filter: blur(70px);
+}
+
+/* Counter color for hero */
+.dark-mode .counter {
+  /* was #e6f3ff */
+  color: var(--text);
+}
+
+/* Members horizontal slider cards (override colors) */
+.dark-mode #members {
+  background: transparent;
+}
+.dark-mode #members .member-card {
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  color: var(--text);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+}
+.dark-mode #members .member-card:hover {
+  background: linear-gradient(180deg, var(--brand-300), var(--brand-600));
+}
+
+/* Horizontal section wrapper background (if any) */
+.dark-mode .horizontal-scroll-section,
+.dark-mode .horizontal-wrapper,
+.dark-mode .horizontal-slider {
+  background: transparent;
+  /* was #dbeefe */
+  color: var(--text);
+}
+
+/* Misc text elements (headings, small text) */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode small,
+.dark-mode .text-muted {
+  /* was #dbeefe */
+  color: var(--text);
+}
+
+
+/* Buttons: outline primary adaptation */
+.dark-mode .btn-outline-primary {
+  color: var(--accent);
+  border-color: rgba(78, 168, 255, 0.3);
+  background: transparent;
+}
+.dark-mode .btn-outline-primary:hover {
+  background: rgba(78, 168, 255, 0.06);
+  border-color: var(--accent);
+}
+
+/* ensure links in card body are visible */
+.dark-mode .card a,
+.dark-mode .member-links a {
+  /* was #cfe9ff */
+  color: var(--accent);
+}
+
+/* Respect reduced motion fallback still applies (no changes needed) */
+
+/* small responsive tweaks kept consistent with dark colors */
+@media (max-width: 991px) {
+  .dark-mode .timeline::before {
+    left: 8px;
+  }
+  .dark-mode .timeline-item,
+  .dark-mode .timeline-item * {
+    color: var(--text);
+  }
+}
+
+
+/* Dark mode harmonization (uses your .dark-mode class) */
+.dark-mode #about::before,
+.dark-mode #about::after {
+  opacity: 0.7;
+  filter: blur(36px);
+}
+.dark-mode #about .col-md-6:first-child {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0)
+  );
+}
+.dark-mode #about h2 {
+  /* was #e6f3ff */
+  color: var(--text);
+}
+.dark-mode #about .card {
+  /* was dark gradient */
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  color: var(--text);
+}
+.dark-mode #about .card small {
+  /* was #9fb9d9 */
+  color: var(--muted);
+}
+.dark-mode #about .bi {
+  color: var(--accent-cyan);
+}

@@ -1,0 +1,76 @@
+:root {
+  /* Base */
+  --bg: #f6f9fc;
+  --bg-glass: rgba(255, 255, 255, 0.55);
+  --bg-glass-strong: rgba(255, 255, 255, 0.75);
+
+  /* Text */
+  --text-primary: #0a0f1d;
+  --text-secondary: #4d5566;
+  --text-muted: #718096;
+
+  /* Border + Lines */
+  --border-color: rgba(0, 0, 0, 0.12);
+  --border-glass: rgba(255, 255, 255, 0.6);
+
+  /* Accent (blue glass) */
+  --accent: #3f82ff;
+  --accent-light: rgba(63, 130, 255, 0.15);
+  --accent-glow: 0 0 22px rgba(63, 130, 255, 0.4);
+
+  /* Cards */
+  --card-bg: var(--bg-glass);
+  --card-bg-hover: rgba(255, 255, 255, 0.72);
+
+  /* Shadows */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+  /* Scrollbar */
+  --scroll-thumb: rgba(63, 130, 255, 0.6);
+  --scroll-track: transparent;
+
+  /* Blur amount */
+  --blur: 18px;
+
+  /* Transitions */
+  --tr-fast: 0.25s ease;
+  --tr-slow: 0.45s ease;
+}
+
+body.dark-mode {
+  --bg: #0a0f1f;
+
+  /* Glass layers */
+  --bg-glass: rgba(20, 30, 55, 0.45);
+  --bg-glass-strong: rgba(20, 30, 55, 0.65);
+
+  /* Text */
+  --text-primary: #e2ebff;
+  --text-secondary: #a8b3cc;
+  --text-muted: #7b86a3;
+
+  /* Border */
+  --border-color: rgba(255, 255, 255, 0.12);
+  --border-glass: rgba(255, 255, 255, 0.3);
+
+  /* Accent (glass neon blue) */
+  --accent: #53a4ff;
+  --accent-light: rgba(83, 164, 255, 0.18);
+  --accent-glow: 0 0 26px rgba(100, 170, 255, 0.55);
+
+  /* Cards */
+  --card-bg: var(--bg-glass);
+  --card-bg-hover: rgba(30, 45, 75, 0.6);
+
+  /* Shadows */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.45);
+  --shadow-medium: 0 12px 32px rgba(0, 0, 0, 0.65);
+
+  /* Scrollbar */
+  --scroll-thumb: rgba(83, 164, 255, 0.7);
+  --scroll-track: transparent;
+
+  /* Blur */
+  --blur: 18px;
+}
